@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Café Tambo | Café de altura tostado en Barranco, Lima</title>
+<meta name="description" content="Café Tambo: café peruano de altura tostado cada mañana en Barranco, Lima. Mira el menú, revisa el horario y pide por WhatsApp.">
+<meta name="theme-color" content="#2F4B3A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Café Tambo | Café de altura en Barranco, Lima">
+<meta property="og:description" content="Café peruano tostado cada mañana. Mira el menú y pide por WhatsApp.">
+<meta property="og:locale" content="es_PE">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Café Tambo",
+  "servesCuisine": "Café peruano",
+  "priceRange": "S/",
+  "telephone": "+51999999999",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Tambo 123",
+    "addressLocality": "Barranco",
+    "addressRegion": "Lima",
+    "addressCountry": "PE"
+  },
+  "openingHours": ["Mo-Fr 07:00-20:00", "Sa 08:00-21:00", "Su 08:00-14:00"]
+}
+</script>
+
+<style>
+  :root {
+    --paper: #F1F3EA;
+    --ink: #1E2B24;
+    --leaf: #2F4B3A;
+    --cherry: #B02A45;
+    --gold: #E0A93B;
+    --line: rgba(30, 43, 36, .22);
+    --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+    --body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    font-size: 1.0625rem;
+  }
+  img, svg { max-width: 100%; display: block; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* Encabezado */
+  header { padding-block: 1.1rem; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .brand { font-family: var(--display); font-weight: 800; font-size: 1.4rem; text-decoration: none; letter-spacing: -.01em; }
+  nav { display: none; gap: 1.6rem; }
+  nav a { text-decoration: none; font-weight: 500; }
+  nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  @media (min-width: 760px) { nav { display: flex; } }
+
+  /* Botones */
+  .btn {
+    display: inline-block; font: 600 1rem var(--body); text-decoration: none;
+    padding: .8rem 1.4rem; border-radius: 999px; border: 2px solid var(--cherry);
+    background: var(--cherry); color: var(--paper); cursor: pointer;
+    transition: background .2s, color .2s;
+  }
+  .btn:hover { background: var(--ink); border-color: var(--ink); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn.small { padding: .55rem 1.1rem; font-size: .95rem; }
+
+  /* Hero */
+  .hero { padding-block: clamp(2rem, 7vw, 5rem); }
+  .hero .wrap { display: grid; gap: 2.5rem; align-items: center; }
+  @media (min-width: 860px) { .hero .wrap { grid-template-columns: 1.15fr .85fr; } }
+  h1 {
+    font-family: var(--display); font-weight: 800; line-height: 1;
+    font-size: clamp(2.8rem, 8.5vw, 5.6rem); letter-spacing: -.03em;
+  }
+  .hero p.lead { max-width: 34rem; margin-top: 1.4rem; font-size: 1.2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+  .status {
+    display: inline-flex; align-items: center; gap: .55rem; margin-top: 1.6rem;
+    font-weight: 500; font-size: .98rem;
+  }
+  .dot { width: .7rem; height: .7rem; border-radius: 50%; background: #8a8f88; }
+  .status.open .dot { background: #2e9a5b; box-shadow: 0 0 0 4px rgba(46,154,91,.22); }
+
+  .cup { width: min(380px, 80%); margin-inline: auto; }
+  .steam path { fill: none; stroke: var(--gold); stroke-width: 5; stroke-linecap: round; opacity: 0; animation: rise 3.2s ease-in-out infinite; }
+  .steam path:nth-child(2) { animation-delay: .9s; }
+  .steam path:nth-child(3) { animation-delay: 1.8s; }
+  @keyframes rise {
+    0% { opacity: 0; transform: translateY(14px); }
+    40% { opacity: .95; }
+    100% { opacity: 0; transform: translateY(-16px); }
+  }
+
+  /* Secciones */
+  section { padding-block: clamp(2.5rem, 7vw, 4.5rem); }
+  h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -.02em; line-height: 1.05; }
+  .section-intro { margin-top: .8rem; max-width: 34rem; }
+
+  /* Menú */
+  #menu { background: var(--leaf); color: var(--paper); }
+  #menu :focus-visible { outline-color: var(--gold); }
+  .tabs { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.8rem; }
+  .tab {
+    font: 600 1rem var(--body); padding: .55rem 1.2rem; border-radius: 999px; cursor: pointer;
+    background: transparent; color: var(--paper); border: 2px solid rgba(241,243,234,.5);
+  }
+  .tab[aria-pressed="true"] { background: var(--paper); color: var(--leaf); border-color: var(--paper); }
+  .items { list-style: none; padding: 0; margin-top: 1.6rem; display: grid; gap: .2rem 3rem; }
+  @media (min-width: 760px) { .items { grid-template-columns: 1fr 1fr; } }
+  .items[hidden] { display: none; }
+  .items li { padding: .9rem 0; border-bottom: 1px dashed rgba(241,243,234,.35); }
+  .row { display: flex; justify-content: space-between; gap: 1rem; font-weight: 600; }
+  .row span:last-child { color: var(--gold); white-space: nowrap; }
+  .items small { display: block; opacity: .85; font-size: .95rem; margin-top: .15rem; }
+
+  /* Nosotros */
+  .about { display: grid; gap: 2rem; }
+  @media (min-width: 860px) { .about { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .about p + p { margin-top: 1rem; }
+  .facts { list-style: none; padding: 0; display: grid; gap: 1.2rem; align-content: start; }
+  .facts li { border-left: 4px solid var(--cherry); padding-left: 1rem; }
+  .facts strong { display: block; font-family: var(--display); font-size: 1.3rem; }
+
+  /* Visítanos */
+  #visita { border-top: 1px solid var(--line); }
+  .visit { display: grid; gap: 2.5rem; }
+  @media (min-width: 860px) { .visit { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  table { width: 100%; border-collapse: collapse; margin-top: 1.2rem; }
+  th, td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid var(--line); font-weight: 400; }
+  td:last-child { text-align: right; }
+  tr.today { background: rgba(224,169,59,.28); font-weight: 600; }
+  tr.today th { font-weight: 600; }
+  address { font-style: normal; margin-top: 1.2rem; }
+
+  /* Banda final */
+  .cta-band { background: var(--cherry); color: var(--paper); text-align: center; }
+  .cta-band .btn { background: var(--paper); color: var(--cherry); border-color: var(--paper); margin-top: 1.5rem; }
+  .cta-band .btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .cta-band :focus-visible { outline-color: var(--paper); }
+
+  footer { padding-block: 1.6rem; font-size: .92rem; text-align: center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .steam path { animation: none; opacity: .8; }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#inicio">Café Tambo</a>
+    <nav aria-label="Principal">
+      <a href="#menu">Menú</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#visita">Visítanos</a>
+    </nav>
+    <a class="btn small" href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero" aria-labelledby="titulo">
+    <div class="wrap">
+      <div>
+        <h1 id="titulo">Café de altura, tostado cada mañana.</h1>
+        <p class="lead">Granos de Cusco, Chanchamayo y Cajamarca tostados en Barranco. Pasa por una taza o llévate una bolsa a casa.</p>
+        <div class="actions">
+          <a class="btn" href="#menu">Ver el menú</a>
+          <a class="btn ghost" href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+        </div>
+        <p class="status" id="estado" aria-live="polite"><span class="dot"></span><span id="estado-texto">Revisando horario...</span></p>
+      </div>
+
+      <svg class="cup" viewBox="0 0 400 400" role="img" aria-label="Taza de café humeante">
+        <circle cx="200" cy="215" r="170" fill="#B02A45"/>
+        <g class="steam">
+          <path d="M160 130 C 145 105, 175 90, 160 62"/>
+          <path d="M200 125 C 185 100, 215 85, 200 55"/>
+          <path d="M240 130 C 225 105, 255 90, 240 62"/>
+        </g>
+        <path d="M110 170 H290 V250 C290 305 255 335 200 335 C145 335 110 305 110 250 Z" fill="#F1F3EA"/>
+        <path d="M290 195 H318 C345 195 345 260 315 260 H288" fill="none" stroke="#F1F3EA" stroke-width="16" stroke-linecap="round"/>
+        <ellipse cx="200" cy="170" rx="90" ry="14" fill="#1E2B24"/>
+        <ellipse cx="200" cy="356" rx="115" ry="10" fill="#F1F3EA" opacity=".9"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="menu" aria-labelledby="menu-titulo">
+    <div class="wrap">
+      <h2 id="menu-titulo">Menú</h2>
+      <p class="section-intro">Precios en soles. Todo se prepara al momento.</p>
+
+      <div class="tabs" role="group" aria-label="Categorías del menú">
+        <button class="tab" type="button" data-target="bebidas" aria-pressed="true">Bebidas</button>
+        <button class="tab" type="button" data-target="comer" aria-pressed="false">Para comer</button>
+        <button class="tab" type="button" data-target="granos" aria-pressed="false">Granos para llevar</button>
+      </div>
+
+      <ul class="items" id="bebidas">
+        <li><div class="row"><span>Espresso</span><span>S/ 7</span></div><small>Doble, con notas de cacao.</small></li>
+        <li><div class="row"><span>Americano</span><span>S/ 8</span></div><small>Espresso alargado con agua caliente.</small></li>
+        <li><div class="row"><span>Cappuccino</span><span>S/ 11</span></div><small>Leche vaporizada y espuma cremosa.</small></li>
+        <li><div class="row"><span>Flat white</span><span>S/ 12</span></div><small>Más café, menos espuma.</small></li>
+        <li><div class="row"><span>Filtrado V60</span><span>S/ 14</span></div><small>Del origen que elijas ese día.</small></li>
+        <li><div class="row"><span>Cold brew</span><span>S/ 13</span></div><small>Infusionado en frío por 16 horas.</small></li>
+      </ul>
+
+      <ul class="items" id="comer" hidden>
+        <li><div class="row"><span>Tostada con palta</span><span>S/ 14</span></div><small>Pan de masa madre, palta y limón.</small></li>
+        <li><div class="row"><span>Croissant de mantequilla</span><span>S/ 9</span></div><small>Horneado cada mañana.</small></li>
+        <li><div class="row"><span>Sándwich de pavo y queso andino</span><span>S/ 16</span></div><small>Con salsa de ají amarillo suave.</small></li>
+        <li><div class="row"><span>Torta de chocolate</span><span>S/ 12</span></div><small>Con cacao peruano.</small></li>
+        <li><div class="row"><span>Alfajor de la casa</span><span>S/ 6</span></div><small>Relleno de manjar blanco.</small></li>
+      </ul>
+
+      <ul class="items" id="granos" hidden>
+        <li><div class="row"><span>Cusco, 250 g</span><span>S/ 38</span></div><small>Dulce, con notas de caramelo y frutos secos.</small></li>
+        <li><div class="row"><span>Chanchamayo, 250 g</span><span>S/ 36</span></div><small>Cuerpo medio, cítrico y equilibrado.</small></li>
+        <li><div class="row"><span>Cajamarca, 250 g</span><span>S/ 40</span></div><small>Floral, con final de fruta roja.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="nosotros" aria-labelledby="nosotros-titulo">
+    <div class="wrap about">
+      <div>
+        <h2 id="nosotros-titulo">Un tambo para el café peruano</h2>
+        <p style="margin-top:1.2rem">Los antiguos tambos eran paradas en el camino donde se descansaba y se compartía. Así queremos que se sienta el café: un lugar donde parar, conversar y probar algo bien hecho.</p>
+        <p>Compramos directo a familias productoras y tostamos en pequeños lotes, para que cada taza sepa a su origen.</p>
+      </div>
+      <ul class="facts">
+        <li><strong>Tostado en Barranco</strong>Lotes pequeños, todas las semanas.</li>
+        <li><strong>Tres orígenes</strong>Cusco, Chanchamayo y Cajamarca.</li>
+        <li><strong>Compra directa</strong>Trabajamos con familias productoras.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="visita" aria-labelledby="visita-titulo">
+    <div class="wrap visit">
+      <div>
+        <h2 id="visita-titulo">Visítanos</h2>
+        <address>
+          Calle Tambo 123, Barranco<br>
+          Lima, Perú<br>
+          <a href="tel:+51999999999">999 999 999</a>
+        </address>
+        <div class="actions">
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Barranco+Lima" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--display)">Horario</h3>
+        <table id="horario">
+          <tbody>
+            <tr data-dias="1,2,3,4,5"><th scope="row">Lunes a viernes</th><td>7:00 a 20:00</td></tr>
+            <tr data-dias="6"><th scope="row">Sábado</th><td>8:00 a 21:00</td></tr>
+            <tr data-dias="0"><th scope="row">Domingo</th><td>8:00 a 14:00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-titulo">
+    <div class="wrap">
+      <h2 id="cta-titulo">¿Se te antojó un café?</h2>
+      <p class="section-intro" style="margin-inline:auto">Escríbenos y te lo dejamos listo para recoger.</p>
+      <a class="btn" href="https://wa.me/51999999999?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Café Tambo es un negocio ficticio, creado como demo de diseño web.</div>
+</footer>
+
+<script>
+  // Pestañas del menú
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.setAttribute('aria-pressed', String(t === tab)));
+      document.querySelectorAll('.items').forEach(list => {
+        list.hidden = list.id !== tab.dataset.target;
+      });
+    });
+  });
+
+  // Horario por día (0 = domingo). Formato: [hora de apertura, hora de cierre]
+  const horario = {
+    0: [8, 14], 1: [7, 20], 2: [7, 20], 3: [7, 20],
+    4: [7, 20], 5: [7, 20], 6: [8, 21]
+  };
+  const nombresDias = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+
+  // Hora actual en Lima, sin importar dónde esté quien visita la página
+  function ahoraEnLima() {
+    const partes = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Lima', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false
+    }).formatToParts(new Date());
+    const get = tipo => partes.find(p => p.type === tipo).value;
+    const dia = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    return { dia, minutos: (Number(get('hour')) % 24) * 60 + Number(get('minute')) };
+  }
+
+  function actualizarEstado() {
+    const { dia, minutos } = ahoraEnLima();
+    const [abre, cierra] = horario[dia];
+    const caja = document.getElementById('estado');
+    const texto = document.getElementById('estado-texto');
+
+    // Resaltar la fila de hoy en la tabla
+    document.querySelectorAll('#horario tr').forEach(fila => {
+      fila.classList.toggle('today', fila.dataset.dias.split(',').includes(String(dia)));
+    });
+
+    if (minutos >= abre * 60 && minutos < cierra * 60) {
+      caja.classList.add('open');
+      texto.textContent = 'Abierto ahora, cerramos a las ' + cierra + ':00';
+    } else {
+      caja.classList.remove('open');
+      // Buscar la próxima apertura
+      let mensaje;
+      if (minutos < abre * 60) {
+        mensaje = 'Cerrado ahora, abrimos hoy a las ' + abre + ':00';
+      } else {
+        const siguiente = (dia + 1) % 7;
+        mensaje = 'Cerrado ahora, abrimos mañana (' + nombresDias[siguiente] + ') a las ' + horario[siguiente][0] + ':00';
+      }
+      texto.textContent = mensaje;
+    }
+  }
+  actualizarEstado();
+  setInterval(actualizarEstado, 60000);
+</script>
+
+</body>
+</html>
