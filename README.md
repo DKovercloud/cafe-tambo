@@ -2,11 +2,12 @@
 
 Página web de una cafetería, hecha para practicar diseño web: estructura clara, estilo propio y adaptación a distintos tamaños de pantalla.
 
-🔗 **Demo en vivo:** [pega aquí el enlace de GitHub Pages]
+🔗 **Demo en vivo:** https://github.com/DKovercloud/cafe-tambo.git
 
 ## Captura
 
-![Vista previa de Café Tambo](captura.png)
+<img width="1235" height="722" alt="image" src="https://github.com/user-attachments/assets/833074a1-e68b-4bc5-820e-5e0f722d8989" />
+
 
 ## Qué incluye
 
